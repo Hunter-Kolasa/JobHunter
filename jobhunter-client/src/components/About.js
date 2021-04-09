@@ -7,7 +7,7 @@ export class About extends Component {
                 About Page
             </div>
         )
-    }
+        }
 }
 
 export default About
