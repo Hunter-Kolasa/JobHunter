@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { connect } from 'react-redux';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Nav from "./components/Nav";
 import Footer from "./components/Footer";
@@ -6,9 +7,18 @@ import Home from "./components/Home";
 import ErrorPage from "./components/ErrorPage";
 import About from "./components/About";
 import Login from "./components/Login";
+import List from "./components/List";
+import { fetchAllJobs } from "./actions/fetchAllJobs"
 
 class App extends Component {
+
+  componentDidMount() {
+    this.props.fetchAllJobs()
+  }
   render() {
+    if (this.props.loading) {
+      return <h3>Loading...</h3>
+    }
     return (
       <Router>
         <Nav />
@@ -16,6 +26,7 @@ class App extends Component {
           <Route exact path="/" component={Login} />
           <Route exact path="/about" component={About} />
           <Route exact path="/home" component={Home} />
+          <Route exact path="/jobs" component={List} />
           <Route component={ErrorPage} />
         </Switch>
         <Footer />
@@ -24,4 +35,10 @@ class App extends Component {
   }
 }
 
-export default App;
+const mapStateToProps = state => {
+  return {
+    loading: state.loading
+  }
+}
+
+export default connect(mapStateToProps, { fetchAllJobs })(App);

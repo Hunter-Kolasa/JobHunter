@@ -4,7 +4,7 @@ class Footer extends Component {
     render() {
         return (
             <div>
-                Footer - Something, Something Drink More Water
+                &copy; JobHunter: Property of the first perosn to give me $10
             </div>
         )
     }
