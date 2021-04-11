@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-export class Form extends Component {
+export class SearchBar extends Component {
     render() {
         return (
             <div>
@@ -12,4 +12,4 @@ export class Form extends Component {
     }
 }
 
-export default Form
+export default SearchBar

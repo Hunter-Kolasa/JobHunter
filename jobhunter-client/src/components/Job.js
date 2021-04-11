@@ -9,7 +9,8 @@ class Job extends Component {
                 <h2>{location}</h2>
                 <h3>{company}</h3>
                 <p>{description}</p>
-                <p>{url}</p>
+                <p><a href={url}>Apply</a></p>
+                
             </div>
         )
     }

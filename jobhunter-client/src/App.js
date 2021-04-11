@@ -6,9 +6,10 @@ import Footer from "./components/Footer";
 import Home from "./components/Home";
 import ErrorPage from "./components/ErrorPage";
 import About from "./components/About";
-import Login from "./components/Login";
+// import Login from "./components/Login";
 import List from "./components/List";
 import { fetchAllJobs } from "./actions/fetchAllJobs"
+import SavedList from "./components/SavedList";
 
 class App extends Component {
 
@@ -22,10 +23,10 @@ class App extends Component {
     return (
       <Router>
         <Nav />
+        <SavedList />
         <Switch>
-          <Route exact path="/" component={Login} />
+          <Route exact path="/" component={Home} />
           <Route exact path="/about" component={About} />
-          <Route exact path="/home" component={Home} />
           <Route exact path="/jobs" component={List} />
           <Route component={ErrorPage} />
         </Switch>

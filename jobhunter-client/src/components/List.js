@@ -7,7 +7,7 @@ class List extends Component {
     render() {
         const jobs = this.props.jobs.map( (job, index) => <Job key={index} title={job.title} company={ job.company } location={ job.location } type={ job.type } description={ job.description } url={ job.url }/>)
         return (
-            <div>
+            <div className="main-content-center">
                 { jobs }
             </div>
         )
