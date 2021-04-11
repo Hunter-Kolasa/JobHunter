@@ -1,5 +1,6 @@
 const initialState = {
     jobs: [],
+    savedJobs: [],
     loading: true
 }
 
@@ -20,7 +21,7 @@ const jobsReducer = (state={initialState}, action) => {
             return {
                 ...state,
                 loading: false,
-                savedJobs: action.jobs
+                savedJobs: action.savedJobs
             }
         case "ADD_JOB":
             return {

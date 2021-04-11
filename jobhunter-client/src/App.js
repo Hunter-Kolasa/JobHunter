@@ -9,11 +9,13 @@ import About from "./components/About";
 // import Login from "./components/Login";
 import List from "./components/List";
 import { fetchAllJobs } from "./actions/fetchAllJobs"
+import { fetchSavedJobs } from "./actions/fetchSavedJobs"
 import SavedList from "./components/SavedList";
 
 class App extends Component {
 
   componentDidMount() {
+    this.props.fetchSavedJobs()
     this.props.fetchAllJobs()
   }
   render() {
@@ -42,4 +44,11 @@ const mapStateToProps = state => {
   }
 }
 
-export default connect(mapStateToProps, { fetchAllJobs })(App);
+const mapDispatchToProps = dispatch => {
+  return {
+    fetchAllJobs: () => dispatch(fetchAllJobs()),
+    fetchSavedJobs: () => dispatch(fetchSavedJobs())
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);

@@ -1,4 +1,5 @@
 export const saveJob = (job) => {
+    // console.log(job)
     return dispatch => {
         fetch('http://localhost:3001/jobs', {
             method: "POST",
