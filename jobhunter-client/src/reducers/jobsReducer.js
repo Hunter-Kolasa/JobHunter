@@ -26,7 +26,7 @@ const jobsReducer = (state={initialState}, action) => {
         case "ADD_JOB":
             return {
                 ...state,
-                loading: false
+                savedJobs: [...state.savedJobs, action.savedJob]
             }
         default:
             return state;

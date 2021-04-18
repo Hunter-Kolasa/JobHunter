@@ -11,3 +11,15 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.left-sidebar-list {
+  border-radius: 5px;
+  box-shadow: 5px red;
+  display: grid;
+  align-items: left;
+}
+
+.small-tile {
+  text-shadow: 3px red;
+}
+

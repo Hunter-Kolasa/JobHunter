@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 class ErrorPage extends Component {
     render() {
         return (
-            <div>
+            <div className="error">
                 Error Fallback Page
             </div>
         )

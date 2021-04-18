@@ -1,18 +1,29 @@
 import React, { Component } from 'react'
 import { saveJob } from '../actions/saveJob'
 import { connect } from 'react-redux'
+import parse from 'html-react-parser'
+import ShowMore from 'react-show-more-button/dist/module';
 
 class Job extends Component {
+    handleSave = () => {
+        const job = this.props
+        saveJob(job)
+    }
     render() {
-        const { title, company, type, location, description, url } = this.props;
-        
+        const { title, company, schedule, location, description, url } = this.props;
+
         return (
-            <div>
-                <h1>{type}: {title}</h1>
+            <div className="center-job-tile">
+                <h1>{schedule}: {title}</h1>
                 <h2>{location}</h2>
                 <h3>{company}</h3>
-                <p>{description}</p>
-                <p><a href={url}>Link to Job</a> <button onClick={(job) => console.log(job)}>Save</button></p>
+                <ShowMore maxHeight={150} backgroundColor="rgba(163, 163, 163, 0.192)">
+                    {parse(`${description}`)}
+                    <p><a href={url}>Link to Job</a> <button onClick={this.handleSave}>Save</button></p>
+                </ShowMore>
+                
+                
+                
             </div>
         )
     }
