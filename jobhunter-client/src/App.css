@@ -7,7 +7,7 @@ html {
 
 body {
   position: relative;
-  display: grid;
+  /* display: grid; */
   background: rgba(0, 132, 255, 0.281)
 }
 
@@ -15,6 +15,16 @@ body {
   position: relative;
   margin: 0 auto;
   left: 50%;
+
+}
+
+.searchbar input {
+  padding: 7px;
+}
+
+.searchbar button {
+  margin-left: 5px;
+  padding: 7px;
 }
 
 .main-content-center {
@@ -25,12 +35,16 @@ body {
   background: rgba(100, 86, 138, 0.651);
   box-shadow: 5px 5px 5px;
   margin: 15px;
-  padding:10px;
-  
+  padding: 10px;
 }
 
 .job-tile-description {
   background: rgba(0, 132, 255, 0.281)
+}
+
+.navbar {
+  width: 100%;
+  height: 50px;
 }
 
 .navbar-list {
@@ -41,7 +55,7 @@ body {
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background-color: #333;
+  background-color: rgba(58, 48, 87, 0.651);
 }
 
 .navbar-item {
@@ -51,6 +65,11 @@ body {
   color: white;
   text-align: center;
   padding: 14px 16px;
+  text-decoration: none;
+}
+
+.navbar-item a {
+  color: white;
   text-decoration: none;
 }
 
@@ -69,7 +88,7 @@ body {
 .left-sidebar-list {
   margin: 10px;
   margin-left: 1px;
-  display: grid;
+  /* display: grid; */
   position: fixed;
   background:  rgba(100, 86, 138, 0.651);
   width: 30%;
@@ -82,13 +101,34 @@ body {
 }
 
 .small-tile {
-  
   border-radius: 5px;
   border-style: solid;
+  padding: 10px;
+  display: grid;
+  grid-template-columns: 7fr 1fr;
+  align-items: center;
 }
 
-.small-tile:hover {
+/* .job-info {
+  
+} */
+
+.small-tile a {
+  color: white;
+}
+
+/* .small-tile:hover {
   background:  rgba(65, 56, 90, 0.651);
+} */
+
+.delete-button {
+  width: 100%;
+  font-size: 1.5rem;
+}
+
+.delete-button:hover {
+  cursor: pointer;
+  color: red
 }
 
 .footer {

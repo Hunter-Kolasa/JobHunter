@@ -24,7 +24,7 @@ const jobsReducer = (state={initialState}, action) => {
                 savedJobs: action.savedJobs
             }
         case "ADD_JOB":
-            console.log(action.savedJob)
+            // console.log(action.savedJob)
             return {
                 ...state,
                 savedJobs: [...state.savedJobs, action.savedJob]

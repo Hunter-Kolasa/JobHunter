@@ -20,11 +20,8 @@ class Job extends Component {
                 <h3>{company}</h3>
                 <ShowMore maxHeight={150} backgroundColor="rgba(163, 163, 163, 0.192)">
                     {parse(`${description}`)}
-                    <p><a href={url}>Link to Job</a> <button onClick={this.handleSave}>Save</button></p>
+                    <p><a href={url} target="_blank" rel="noreferrer">Link to Job</a> <button onClick={this.handleSave}>Save</button></p>
                 </ShowMore>
-                
-                
-                
             </div>
         )
     }

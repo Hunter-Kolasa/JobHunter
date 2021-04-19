@@ -6,7 +6,7 @@ export const fetchAllJobs = (params = "") => {
         } else {
             searchParams = ``
         }
-        console.log(searchParams)
+        // console.log(searchParams)
         // dispatch({ type: 'LOADING' });
         fetch(`https://cors-anywhere.herokuapp.com/https://jobs.github.com/positions.json${searchParams}`)
             .then(response => response.json())
