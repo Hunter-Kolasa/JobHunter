@@ -5,7 +5,7 @@ class Home extends Component {
     render() {
         return (
             
-            <div>
+            <div className="main-content-center">
                 <h1>JobHunter Home</h1>
                 {/* <button onClick={fetchAllJobs}>Fetch Jobs</button> */}
             </div>

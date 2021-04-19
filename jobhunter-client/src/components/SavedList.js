@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import JobPreview from './JobPreview'
+import JobPreview from './JobPreview';
+
 
 class SavedList extends Component {
     
@@ -8,7 +9,7 @@ class SavedList extends Component {
         let savedJobs;
         if (this.props.savedJobs) {
         if (this.props.savedJobs.length > 0) {
-            savedJobs = this.props.savedJobs.map( (job, index) => <JobPreview key={index} title={job.title} location={ job.location } schedule={ job.type } url={job.url}/>)
+            savedJobs = this.props.savedJobs.map( (job, index) => <JobPreview key={ job.id } id={ job.id } title={job.title} location={ job.location } schedule={ job.schedule } url={job.url}/>)
         } else {
             savedJobs = "You don't have any saved jobs!"
         }}

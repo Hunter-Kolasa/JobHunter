@@ -17,7 +17,6 @@ class JobsController < ApplicationController
   def create
     
     @job = Job.new(job_params)
-    pry
     if @job.save
       render json: @job, status: :created, location: @job
     else
@@ -36,7 +35,12 @@ class JobsController < ApplicationController
 
   # DELETE /jobs/1
   def destroy
-    @job.destroy
+    id = @job.id
+    if @job.destroy
+      render json: id
+    else
+      render json: "Failed to Delete"
+    end
   end
 
   private

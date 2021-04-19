@@ -24,10 +24,27 @@ const jobsReducer = (state={initialState}, action) => {
                 savedJobs: action.savedJobs
             }
         case "ADD_JOB":
+            console.log(action.savedJob)
             return {
                 ...state,
                 savedJobs: [...state.savedJobs, action.savedJob]
             }
+        case "DELETE_JOB":
+            // findIndex(obj => obj.id == 3)
+            let i = state.savedJobs.findIndex(job => job.id === action.jobId)
+            return {
+                ...state,
+                savedJobs: [
+                    ...state.savedJobs.slice(0,i),
+                    ...state.savedJobs.slice(i+1)
+                ]
+            }
+        // case "TEST_LOG":
+        //         console.log("Made it")
+        //     return {
+        //         ...state
+        //     }
+
         default:
             return state;
     }

@@ -1,6 +1,6 @@
 export const saveJob = (job) => {
     // console.log("saveJob: ", job)
-    return dispatch => {
+    return (dispatch) => {
         fetch('http://localhost:3001/jobs', {
             method: "POST",
             headers: {
@@ -12,6 +12,7 @@ export const saveJob = (job) => {
             .then(resp => resp.json())
             .then(savedJob => {
                 dispatch({ type: "ADD_JOB", savedJob })
+                // console.log(savedJob)
             })
             .catch(error => {
                 console.log(error)

@@ -7,7 +7,8 @@ import ShowMore from 'react-show-more-button/dist/module';
 class Job extends Component {
     handleSave = () => {
         const job = this.props
-        saveJob(job)
+        // console.log(job)
+        this.props.saveJob(job)
     }
     render() {
         const { title, company, schedule, location, description, url } = this.props;
@@ -28,6 +29,13 @@ class Job extends Component {
         )
     }
 }
+
+// const mapDispatchToProps = dispatch => {
+//     return {
+//       fetchAllJobs: () => dispatch(fetchAllJobs()),
+//       fetchSavedJobs: () => dispatch(fetchSavedJobs())
+//     }
+//   }
 
 
 
