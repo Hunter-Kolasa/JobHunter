@@ -33,7 +33,7 @@ class List extends Component {
                 <div className="searchbar">
                     <form onSubmit={this.handleSubmit}>
                         <input type="text" name="text" onChange={this.handleChange} value={this.state.text}></input>
-                        <button type="submit">Search</button>
+                        <button type="submit">Search for Jobs!</button>
                     </form>
                 </div>
                 <div className="main-content-center">

@@ -23,18 +23,23 @@ class App extends Component {
     }
     return (
       <Router>
-        <div className="sidebar-parent">
-          <Nav />
-          <SavedList />
+        <div className="page-container">
+          <div className="content-wrap">
+            <div className="sidebar-parent">
+              <Nav />
+              <SavedList />
+            </div>
+            <Switch>
+              <Route exact path="/" component={Home} />
+              <Route exact path="/about" component={About} />
+              <Route exact path="/jobs" component={List} />
+              <Route component={ErrorPage} />
+            </Switch>
+          </div>
+          <Footer />
         </div>
-        <Switch>
-          <Route exact path="/" component={Home} />
-          <Route exact path="/about" component={About} />
-          <Route exact path="/jobs" component={List} />
-          <Route component={ErrorPage} />
-        </Switch>
-        <Footer />
       </Router>
+      
     );
   }
 }
