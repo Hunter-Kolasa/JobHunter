@@ -10,7 +10,7 @@ class Home extends Component {
             
             <div className="main-content-center">
                 <div className="home">
-                    <img src={"/JH2.png"} alt="JobHunter Logo" /><br/>
+                    <img src={"/JobHunterFullLogo.png"} alt="JobHunter Full Logo" /><br/>
                     <Link className="link" to="/jobs">Begin Your Hunt!</Link>
                 </div>
             </div>

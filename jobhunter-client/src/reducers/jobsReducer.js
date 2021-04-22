@@ -1,26 +1,36 @@
 const initialState = {
     jobs: [],
     savedJobs: [],
-    loading: true
+    loading: true,
+    loadingSaved: true,
+    page: 1,
+    search: ""
 }
 
 const jobsReducer = (state={initialState}, action) => {
     switch(action.type) {
-        case "LOADING":
+        case "LOADING_JOBS":
             return {
                 ...state,
                 loading: true
+            }
+        case "LOADING_SAVED":
+            return {
+                ...state,
+                loadingSaved: true
             }
         case "SET_JOBS":
             return {
                 ...state,
                 loading: false,
-                jobs: action.jobs
+                jobs: action.jobs,
+                page: action.page,
+                search: action.search
             }
         case "SET_SAVED_JOBS":
             return {
                 ...state,
-                loading: false,
+                loadingSaved: false,
                 savedJobs: action.savedJobs
             }
         case "ADD_JOB":

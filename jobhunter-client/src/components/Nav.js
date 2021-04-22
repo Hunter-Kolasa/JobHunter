@@ -6,9 +6,13 @@ class Nav extends Component {
         return (
             <div className="navbar">
                 <ul className="navbar-list">
-                    <li name="/" className="navbar-item"><Link to="/">Home</Link></li>
-                    <li name="/about" className="navbar-item"><Link to="/about">About</Link></li>
-                    <li name="/jobs" className="navbar-item"><Link to="/jobs">Jobs</Link></li>
+                    <div className="navbar-complete">
+                        <li name="/" className="navbar-item"><Link to="/"><img className="home-image" src={"/JobHunterLogoOnlyIcon.png"} alt="JobHunter Logo Only" /></Link></li>
+                        <div className="text-nav-item">
+                            <li name="/about" className="navbar-item"><Link to="/about">About</Link></li>
+                            <li name="/jobs" className="navbar-item"><Link to="/jobs">Jobs</Link></li>
+                        </div>
+                    </div>
                 </ul>
             </div>
         )

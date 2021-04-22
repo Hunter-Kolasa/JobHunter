@@ -18,9 +18,6 @@ class App extends Component {
     this.props.fetchAllJobs()
   }
   render() {
-    if (this.props.loading) {
-      return <h3>Loading...</h3>
-    }
     return (
       <Router>
         <div className="page-container">
@@ -44,12 +41,6 @@ class App extends Component {
   }
 }
 
-const mapStateToProps = state => {
-  return {
-    loading: state.loading
-  }
-}
-
 const mapDispatchToProps = dispatch => {
   return {
     fetchAllJobs: () => dispatch(fetchAllJobs()),
@@ -57,4 +48,4 @@ const mapDispatchToProps = dispatch => {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default connect(null, mapDispatchToProps)(App);

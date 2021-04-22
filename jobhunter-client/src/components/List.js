@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { fetchAllJobs } from "../actions/fetchAllJobs"
+import { fetchAllJobs } from '../actions/fetchAllJobs'
 import Job from './Job';
+import Loader from './Loader/Loader'
+import Paginator from './Paginator'
 
 
 class List extends Component {
@@ -25,6 +27,9 @@ class List extends Component {
     render() {
         
         let jobs;
+        if (this.props.loading) {
+            jobs = <Loader />
+        }
         if (this.props.jobs) {
             jobs = this.props.jobs.map( (job, index) => <Job key={index} title={job.title} company={ job.company } location={ job.location } schedule={ job.type } description={ job.description } url={ job.url }/>)
             }
@@ -37,7 +42,13 @@ class List extends Component {
                     </form>
                 </div>
                 <div className="main-content-center">
+                    {/* <div className="paginator-container">
+                        <Paginator search={this.props.text} jobsLength={this.props.jobs.length}/>
+                    </div> */}
                     { jobs }
+                    {/* <div className="paginator-container">
+                        <Paginator search={this.props.text} jobsLength={this.props.jobs.length}/>
+                    </div> */}
                 </div>
             </div>
         )
@@ -46,7 +57,8 @@ class List extends Component {
 
 const mapStateToProps = state => {
     return {
-        jobs: state.jobs
+        jobs: state.jobs,
+        loading: state.loading
     }
 }
 
