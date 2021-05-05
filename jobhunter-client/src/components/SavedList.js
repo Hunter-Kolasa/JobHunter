@@ -30,6 +30,7 @@ class SavedList extends Component {
 }
 
 const mapStateToProps = state => {
+    console.log("mstp")
     return {
         savedJobs: state.savedJobs,
         loadingSaved: state.loadingSaved

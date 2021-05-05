@@ -87,6 +87,11 @@
 # Diagnostic reports (https://nodejs.org/api/report.html)
 /jobhunter-client/report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
 
+#cors-anywhere
+/cors-anywhere
+/cors-anywhere/*
+/cors-anywhere/.*
+
 # Runtime data
 /jobhunter-client/pids
 /jobhunter-client/*.pid

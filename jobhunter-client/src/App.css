@@ -90,13 +90,13 @@ body {
 .navbar-list {
   position: fixed;
   
-  width: 17%;
+  width: 11.8%;
   height: 5%;
   box-shadow: 0px 2px 2px;
   list-style-type: none;
   border-radius: 9px;
   
-  left: 5%;
+  left: 9%;
   margin: 2px;
   padding: 0;
   overflow: hidden;
@@ -104,7 +104,7 @@ body {
 }
 
 .navbar-list li {
-  font-size:2.2rem;
+  font-size:2rem;
   text-align: left;
 }
 

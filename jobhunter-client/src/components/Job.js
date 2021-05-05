@@ -5,6 +5,8 @@ import parse from 'html-react-parser'
 import ShowMore from 'react-show-more-button/dist/module';
 
 class Job extends Component {
+
+    
     handleSave = () => {
         const job = this.props
         // console.log(job)
