@@ -42,13 +42,13 @@ class List extends Component {
                     </form>
                 </div>
                 <div className="main-content-center">
-                    {/* <div className="paginator-container">
-                        <Paginator search={this.props.text} jobsLength={this.props.jobs.length}/>
-                    </div> */}
+                    {/* <div className="paginator-container"> */}
+                        {/* <Paginator search={this.props.text} jobsLength={this.props.jobs.length}/> */}
+                    {/* </div> */}
                     { jobs }
-                    {/* <div className="paginator-container">
-                        <Paginator search={this.props.text} jobsLength={this.props.jobs.length}/>
-                    </div> */}
+                    {/* <div className="paginator-container"> */}
+                        {/* <Paginator search={this.props.text} jobsLength={this.props.jobs.length}/> */}
+                    {/* </div> */}
                 </div>
             </div>
         )
