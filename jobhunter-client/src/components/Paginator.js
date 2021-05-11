@@ -7,14 +7,15 @@ export class Paginator extends Component {
     handleClick = (e) => {
         let page = this.props.page;
         let search = this.props.search
+        let location = this.props.location
+        let fullTime = this.props.fullTime
         window.scrollTo(0, 0)
         if(e.target.name === "pageDown") {
             page = (page > 1 ? (page - 1) : 1)
-            console.log(page)
-            this.props.fetchAllJobs(search, page)
+            this.props.fetchAllJobs(search, location, fullTime, page)
         } else if(e.target.name === "pageUp") {
             page = (this.props.jobsLength < 49 ? page : (page + 1))
-            this.props.fetchAllJobs(search, page)
+            this.props.fetchAllJobs(search, location, fullTime, page)
         }
     }
 
@@ -28,7 +29,7 @@ export class Paginator extends Component {
             btnUp = ""
         }
         return (
-            <div>
+            <div className="page-btn-container">
                {btnDown}
                {btnUp}
             </div>
