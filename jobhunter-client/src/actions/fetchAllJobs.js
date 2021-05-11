@@ -1,5 +1,4 @@
 export const fetchAllJobs = (search = "", page = 1) => {
-    console.log(page)
     return (dispatch) => {
         dispatch({ type: "LOADING_JOBS" })
         let searchParams;

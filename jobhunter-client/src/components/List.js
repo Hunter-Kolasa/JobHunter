@@ -27,8 +27,11 @@ class List extends Component {
     render() {
         
         let jobs;
+        let loader;
         if (this.props.loading) {
-            jobs = <Loader />
+            loader = <Loader />
+        } else {
+            loader = ""
         }
         if (this.props.jobs) {
             jobs = this.props.jobs.map( (job, index) => <Job key={index} title={job.title} company={ job.company } location={ job.location } schedule={ job.type } description={ job.description } url={ job.url }/>)
@@ -42,13 +45,14 @@ class List extends Component {
                     </form>
                 </div>
                 <div className="main-content-center">
-                    {/* <div className="paginator-container"> */}
-                        {/* <Paginator search={this.props.text} jobsLength={this.props.jobs.length}/> */}
-                    {/* </div> */}
+                    <div className="paginator-container">
+                        <Paginator search={this.props.text} jobsLength={this.props.jobs.length}/>
+                    </div>
+                    { loader }
                     { jobs }
-                    {/* <div className="paginator-container"> */}
-                        {/* <Paginator search={this.props.text} jobsLength={this.props.jobs.length}/> */}
-                    {/* </div> */}
+                    <div className="paginator-container">
+                        <Paginator search={this.props.text} jobsLength={this.props.jobs.length}/>
+                    </div>
                 </div>
             </div>
         )

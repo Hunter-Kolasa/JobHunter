@@ -8,8 +8,11 @@ class SavedList extends Component {
     
     render() {
         let savedJobs;
+        let loader;
         if (this.props.loadingSaved) {
-            savedJobs = <Loader />
+            loader = <Loader />
+        } else {
+            loader = ""
         }
         if (this.props.savedJobs) {
             if (this.props.savedJobs.length > 0) {
@@ -22,6 +25,7 @@ class SavedList extends Component {
             <div className="left-sidebar-list">
                 <h3 className="sidebar-title">Saved Jobs</h3>
                 <div className="list-centered">
+                    { loader }
                     { savedJobs }
                 </div>
             </div>
@@ -30,7 +34,6 @@ class SavedList extends Component {
 }
 
 const mapStateToProps = state => {
-    console.log("mstp")
     return {
         savedJobs: state.savedJobs,
         loadingSaved: state.loadingSaved
